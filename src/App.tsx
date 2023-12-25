@@ -33,9 +33,7 @@ const App = () => {
   };
 
   const onDelete = (id:number)=>{
-    setTask(tasks.filter((task)=>task.id!== id))
-    console.log("Delete",id);
-    
+    setTask(tasks.filter((task)=>task.id!== id))   
   }
 
   const handleVisibility = () => {  

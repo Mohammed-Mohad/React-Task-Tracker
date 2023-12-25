@@ -8,6 +8,7 @@ const Add = ({onAdd}:AddProps) => {
     const [text, setText] = useState("");
     const [day, setDay] = useState("");
     const [reminder, setReminder] = useState(false);
+    const [showForm, setShowForm] = useState(true);
 
 
 const handleSubmit = (e: React.FormEvent<HTMLFormElement>)=>{
@@ -18,11 +19,13 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>)=>{
         return;
     }
     onAdd({text,day,reminder});
+    setShowForm(false);
 }
 
 
 
   return (
+    showForm ? (
     
    <form action="" className='add-form' onSubmit={handleSubmit}>
         <div className="form-control">
@@ -39,6 +42,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>)=>{
         </div>
         <input type="submit" value="Save Task" className="btn btn-block"/>
    </form>
+  ) : null
   )
 }
 
